@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+  appBuilder:
+    image: node:lts-alpine
+    networks:
+      - ACI-vue
+    volumes:
+      - ./:/app
+
+  app:
+    image: nginx:stable-alpine
+    networks:
+      - ACI-vue
+    volumes:
+      - ./dist:/usr/share/nginx/html:ro
+
+networks:
+  ACI-vue:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.100.0/24

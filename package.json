@@ -1,0 +1,23 @@
+{
+  "name": "accessibility-checker-infrastructure",
+  "version": "1.0.0",
+  "description": "Sean will write this",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Enrise/accessibility-checker-infrastructure.git"
+  },
+  "keywords": [
+    "a11y",
+    "accessibility"
+  ],
+  "author": "Enrise",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Enrise/accessibility-checker-infrastructure/issues"
+  },
+  "homepage": "https://github.com/Enrise/accessibility-checker-infrastructure#readme"
+}
