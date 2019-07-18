@@ -1,7 +1,14 @@
 {
   "private": true,
+  "scripts": {
+    "start": "docker-compose up -d app",
+    "stop": "docker-compose stop",
+    "down": "docker-compose down",
+    "update": "docker-compose run --rm appBuilder npm ci"
+  },
   "dependencies": {
     "director": "^1.2.0",
     "vue": "^2.1.8"
-  }
+  },
+  "devDependencies": {}
 }

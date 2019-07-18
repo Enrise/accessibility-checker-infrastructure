@@ -7,13 +7,17 @@ services:
       - ACI-vue
     volumes:
       - ./:/app
+    working_dir: /app
 
   app:
     image: nginx:stable-alpine
     networks:
       - ACI-vue
     volumes:
-      - ./dist:/usr/share/nginx/html:ro
+      - ./:/usr/share/nginx/html:ro
+    working_dir: /usr/share/nginx/html
+    ports: 
+      - 1001:80
 
 networks:
   ACI-vue:
