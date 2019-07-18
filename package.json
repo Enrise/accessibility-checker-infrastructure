@@ -4,7 +4,9 @@
   "description": "Sean will write this",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "./startAll.sh",
+    "stop": "./stopAll.sh",
+    "down": "./downAll.sh"
   },
   "repository": {
     "type": "git",
