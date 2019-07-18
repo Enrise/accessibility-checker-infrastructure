@@ -4,9 +4,10 @@
   "description": "Sean will write this",
   "main": "index.js",
   "scripts": {
-    "start": "./startAll.sh",
-    "stop": "./stopAll.sh",
-    "down": "./downAll.sh"
+    "start": "./scripts/startAll.sh",
+    "stop": "./scripts/stopAll.sh",
+    "down": "./scripts/downAll.sh",
+    "update": "./scripts/updateAll.sh"
   },
   "repository": {
     "type": "git",
