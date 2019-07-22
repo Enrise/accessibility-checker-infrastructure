@@ -10,6 +10,10 @@ You can run the following commands to start / stop / update all the example proj
 - `npm stop` - Stop the example containers
 - `npm run down` - Kill the example containers
 
+## Deployment
+
+We are deploying using Travis-CI to [GitHub Pages](https://enrise.github.io/accessibility-checker-infrastructure/)
+
 ## License
 
 The MIT License (MIT). Please view the [License File](LICENSE) for more information.
