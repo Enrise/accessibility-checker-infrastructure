@@ -7,4 +7,6 @@ services:
 
 install:
   - npm run update
+
+script:
   - npm start
