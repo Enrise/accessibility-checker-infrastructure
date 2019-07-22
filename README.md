@@ -12,4 +12,4 @@ You can run the following commands to start / stop / update all the example proj
 
 ## License
 
-The MIT License (MIT). Please view the [License File](https://github.com/sean-ww/react-redux-datatable/blob/master/LICENSE) for more information.
+The MIT License (MIT). Please view the [License File](LICENSE) for more information.
