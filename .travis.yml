@@ -6,7 +6,7 @@ services:
   - docker
 
 install:
-  - npm run update
+  - bash ./scripts/updateAll.sh
 
 script:
-  - npm start
+  - bash ./scripts/startAll.sh
