@@ -1,7 +1,7 @@
 {
   "name": "accessibility-checker-infrastructure",
   "version": "1.0.0",
-  "description": "Sean will write this",
+  "description": "An example project setup with accessibility checking in place.",
   "main": "index.js",
   "scripts": {
     "start": "./scripts/startAll.sh",
