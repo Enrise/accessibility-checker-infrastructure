@@ -6,8 +6,8 @@ An example project setup with accessibility checking in place.
 
 You can run the following commands to start / stop / update all the example projects at once:
 - `npm run update` - Update/install the node packages
-- `npm run start` - Start the example containers
-- `npm run stop` - Stop the example containers
+- `npm start` - Start the example containers
+- `npm stop` - Stop the example containers
 - `npm run down` - Kill the example containers
 
 ## License
