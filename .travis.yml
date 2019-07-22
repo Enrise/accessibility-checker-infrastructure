@@ -1,20 +1,15 @@
-language: php
-php:
-  - 7.3
+language: minimal
 
 services:
-  - docker
+- docker
 
 install:
-  - bash ./scripts/updateAll.sh
-
-script:
-  - bash ./scripts/startAll.sh
+- bash ./scripts/updateAll.sh
 
 deploy:
   provider: pages
   skip-cleanup: true
   github-token: $PA_TOKEN
-  local-dir: ./usr/share/nginx/html
+  local-dir: ./examples/vanillajs
   on:
-    branch: develop # todo: change me to master
+    branch: master
