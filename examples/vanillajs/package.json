@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "docker-compose up -d app",
+    "stop": "docker-compose stop",
+    "down": "docker-compose down",
+    "update": "docker-compose run --rm appBuilder npm ci"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
