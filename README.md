@@ -12,7 +12,7 @@ You can run the following commands to start / stop / update all the example proj
 
 ## Deployment
 
-We are deploying using Travis-CI to [GitHub Pages](https://enrise.github.io/accessibility-checker-infrastructure/)
+We are deploying using Travis-CI to [GitHub Pages](https://enrise.github.io/accessibility-checker-infrastructure/).
 
 ## License
 
