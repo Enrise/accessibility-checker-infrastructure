@@ -10,3 +10,11 @@ install:
 
 script:
   - bash ./scripts/startAll.sh
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $PA_TOKEN
+  local-dir: ./usr/share/nginx/html
+  on:
+    branch: develop # todo: change me to master
