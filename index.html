@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TodoMVC</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="site-assets/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="row">
+        <div class="col-md-8">
+          <img class="logo" src="site-assets/logo.svg" width="500" height="86" alt="TodoMVC">
+          <p>Helping you <strong>select</strong> an MV* framework</p>
+          <nav>
+            <a href="https://github.com/tastejs/todomvc/archive/master.zip" class="zocial red">Download</a>
+            <a href="https://github.com/tastejs/todomvc" class="zocial ltgray">View on GitHub</a>
+            <a href="https://medium.com/@tastejs" class="zocial ltgray">Blog</a>
+          </nav>
+        </div>
+        <div class="col-md-4">
+          <img class="logo-icon" src="site-assets/logo-icon.png" width="330" height="330" alt="TodoMVC">
+        </div>
+      </header>
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Introduction</h2>
+          <p>We have selected TodoMVC as the basis for our accessibility infrastructure examples.</p>
+        </div>
+        <div class="col-md-8">
+          <h2>Examples</h2>
+          <style is="custom-style">
+            paper-tabs {
+              --paper-tabs-selection-bar-color: #b12d2b;
+            }
+            paper-tab {
+              --paper-tab-ink: #b12d2b;
+            }
+            paper-tabs, core-toolbar {
+              color: rgb(53, 53, 53);
+              background-color: #f4f4f4;
+              font-family: 'Helvetica Neue', Helvetica, Arial;
+              box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+            }
+          </style>
+
+          <iron-pages selected="{{selectedTab}}" class="app-lists">
+            <div class="js-app-list" data-app-list="js">
+              <p class="applist-intro">
+                These are examples written in pure JavaScript.
+              </p>
+              <ul class="js-app-list-inner applist js">
+                <li class="routing">
+                  <a href="examples/vue/" data-source="http://vuejs.org" data-content="Vue.js provides the benefits of MVVM data binding and a composable component system with an extremely simple and flexible API.">Vue.js</a>
+                </li>
+              </ul>
+            </div>
+
+          </iron-pages>
+          <ul class="legend">
+            <li><span class="label">R</span> = App also demonstrates routing</li>
+          </ul>
+          <hr>
+          <h2>Compare these to a non-framework implementation</h2>
+          <ul class="applist">
+            <li class="routing">
+              <a href="examples/vanillajs/" data-source="https://developer.mozilla.org/en/JavaScript" data-content="You know JavaScript right? :P">Vanilla JS</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
