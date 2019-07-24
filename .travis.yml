@@ -17,4 +17,4 @@ deploy:
   github-token: $PA_TOKEN
   local-dir: ./examples
   on:
-    branch: develop # todo: put back to master
+    branch: master
