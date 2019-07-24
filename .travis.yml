@@ -10,6 +10,6 @@ deploy:
   provider: pages
   skip-cleanup: true
   github-token: $PA_TOKEN
-  local-dir: ./examples/vanillajs
+  local-dir: ./
   on:
-    branch: master
+    branch: develop # todo: put back to master
