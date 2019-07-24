@@ -10,6 +10,6 @@ deploy:
   provider: pages
   skip-cleanup: true
   github-token: $PA_TOKEN
-  local-dir: ./
+  local-dir: ./examples
   on:
     branch: develop # todo: put back to master
