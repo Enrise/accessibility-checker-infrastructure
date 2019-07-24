@@ -1,10 +1,15 @@
-language: minimal
+language: node_js
+node_js:
+- 10
 
 services:
 - docker
 
 install:
 - bash ./scripts/updateAll.sh
+
+script:
+- echo "."
 
 deploy:
   provider: pages
