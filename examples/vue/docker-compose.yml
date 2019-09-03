@@ -16,7 +16,7 @@ services:
     volumes:
       - ./:/usr/share/nginx/html:ro
     working_dir: /usr/share/nginx/html
-    ports: 
+    ports:
       - 1001:80
 
 networks:
