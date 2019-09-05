@@ -1,21 +1,10 @@
-const { Assertion } = require("chai");
 const { format } = require("util");
 const colors = require("colors");
-const { Cli } = require("cucumber");
 
 const error = colors.red;
 const link = colors.underline.blue;
 const selector = colors.yellow;
 const html = colors.gray;
-
-Assertion.addProperty("violations", function() {
-  const issueCount = logResults(this._obj);
-  this.assert(
-    issueCount > 0,
-    "Expected to have violations",
-    `We found ${issueCount} violations`
-  );
-});
 
 const selectorToString = (selectors, separator) => {
   separator = separator || " ";
@@ -24,16 +13,19 @@ const selectorToString = (selectors, separator) => {
     .join(separator);
 };
 
-const logResults = results => {
-  const { violations } = results;
-  const violationMessages = [];
+const countViolations = ({ violations }) => {
+  return violations.reduce((count, violation) => {
+    return count + violation.nodes.length;
+  }, 0);
+};
 
-  const issueCount = violations.reduce((count, violation) => {
-    violationMessages.push(
+const axeResultsToText = ({ violations }) => {
+  return violations.reduce((message, violation) => {
+    return (message +=
       format(
         "\n" +
           error("  Violation of %j with %d occurrences!\n") +
-          "    %s. Correct invalid elements at:\n" +
+          "    %s. Invalid elements at:\n" +
           violation.nodes
             .map(
               node =>
@@ -54,12 +46,8 @@ const logResults = results => {
         violation.nodes.length,
         violation.description,
         link(violation.helpUrl.split("?")[0])
-      )
-    );
-    return count + violation.nodes.length;
-  }, 0);
-  if (issueCount) {
-    console.log(violationMessages.join("\n"));
-  }
-  return issueCount;
+      ) + "\n");
+  }, "");
 };
+
+module.exports = { countViolations, axeResultsToText };
