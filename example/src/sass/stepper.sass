@@ -1,8 +1,39 @@
 .stepper
+    width: 80%
+    border: 1px solid #888888
+    border-radius: 5px
+    padding: 20px
+    position: relative
+    margin: auto
+
     &__step
         display: none
 
         &.--active
             display: block
 
+    &__buttons
+        width: 100%
+        text-align: right
+
     &__button
+        background: blue
+        color: white
+        padding: 10px 30px
+        border: 0
+        border-radius: 5px
+        cursor: pointer
+        margin-left: 10px
+        font-size: 16px
+
+        &.--next::after
+            content: ">"
+            padding-left: 10px
+
+        &.--previous::before
+            content: "<"
+            padding-right: 10px
+
+        &:focus,
+        &:hover
+            background: lighten(blue, 20%)
