@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>The HTML5 Herald</title>
+    <meta name="description" content="The HTML5 Herald" />
+    <meta name="author" content="SitePoint" />
+  </head>
+
+  <body>
+    <div class="stepper" id="homepage-stepper">
+      <div class="stepper__step">
+        Do you run docker?
+        <div>
+          <input type="radio" name="docker" value="yes" id="docker-yes" />
+          <label for="docker-yes">Yes</label>
+          <br />
+          <input type="radio" name="docker" value="no" id="docker-no" />
+          <label for="docker-no">No</label>
+        </div>
+
+        <button class="stepper__button --next">Next step</button>
+      </div>
+      <div class="stepper__step">
+        This is a useless step
+        <button class="stepper__button --previous">Previous step</button>
+        <button class="stepper__button --next">Next step</button>
+      </div>
+      <div class="stepper__step">
+        Last
+        <button class="stepper__button --previous">Previous step</button>
+      </div>
+    </div>
+
+    <script src="../js/index.js"></script>
+    <script src="../js/stepper.js"></script>
+  </body>
+</html>
