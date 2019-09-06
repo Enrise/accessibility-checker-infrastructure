@@ -13,4 +13,4 @@ deploy:
   github-token: $PA_TOKEN
   local-dir: ./example/dist/
   on:
-    branch: master
+    branch: develop
