@@ -11,7 +11,7 @@ services:
     ports:
       - 1001:1001
     environment:
-      - PUBLIC_URL=/test/
+      - PUBLIC_URL=/
 
   app:
     image: nginx:stable-alpine
