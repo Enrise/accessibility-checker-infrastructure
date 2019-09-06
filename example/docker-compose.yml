@@ -10,6 +10,8 @@ services:
     working_dir: /app
     ports:
       - 1001:1001
+    environment:
+      - PUBLIC_URL=/test/
 
   app:
     image: nginx:stable-alpine

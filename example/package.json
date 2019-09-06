@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "dev": "parcel watch src/html/index.html src/html/docker/index.html src/html/local/index.html --hmr-port 1001",
-    "build": "parcel build src/html/index.html src/html/docker/index.html src/html/local/index.html"
+    "dev": "parcel watch src/html/index.html src/html/docker/index.html src/html/local/index.html --hmr-port 1001 --public-url ${PUBLIC_URL}",
+    "build": "parcel build src/html/index.html src/html/docker/index.html src/html/local/index.html --public-url ${PUBLIC_URL}"
   },
   "dependencies": {
     "axios": "^0.19.0",
