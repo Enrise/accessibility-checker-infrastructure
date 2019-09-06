@@ -2,9 +2,13 @@ import $ from 'jquery';
 
 const choiceInit = () => {
   $('input[type=radio]').change(function() {
-    const text = this.value == 'yes' ? 'docker' : 'no docker';
-    $('#chosen').text(text);
-    console.log(this.value);
+    if (this.value == 'yes') {
+      $('.suggestion__no-docker, .suggestion__nothing').hide();
+      $('.suggestion__docker').show();
+    } else {
+      $('.suggestion__docker, .suggestion__nothing').hide();
+      $('.suggestion__no-docker').show();
+    }
   });
 };
 

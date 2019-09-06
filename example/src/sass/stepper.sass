@@ -1,10 +1,11 @@
 .stepper
-    width: 80%
-    border: 1px solid #888888
     border-radius: 5px
     padding: 20px
     position: relative
-    margin: auto
+    background: #eeeeee
+
+    &__content
+        min-height: 100px
 
     &__step
         display: none
@@ -14,7 +15,10 @@
 
     &__buttons
         width: 100%
-        text-align: right
+        text-align: center
+
+        @include tablet_and_up
+            text-align: right
 
     &__button
         background: blue
@@ -23,8 +27,13 @@
         border: 0
         border-radius: 5px
         cursor: pointer
-        margin-left: 10px
         font-size: 16px
+        width: 100%
+        margin-top: 10px
+
+        @include tablet_and_up
+            width: auto
+            margin-left: 10px
 
         &.--next::after
             content: ">"

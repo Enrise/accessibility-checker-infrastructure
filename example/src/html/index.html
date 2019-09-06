@@ -4,43 +4,93 @@
   <head>
     <meta charset="utf-8" />
 
-    <title>The HTML5 Herald</title>
-    <meta name="description" content="The HTML5 Herald" />
-    <meta name="author" content="SitePoint" />
+    <title>Accessibility checker test page</title>
+    <meta name="description" content="Accessibility checker test page" />
+    <meta name="author" content="Epic @ Enrise" />
+    <link rel="stylesheet" href="../sass/index.sass" />
   </head>
 
   <body>
-    <div class="stepper" id="homepage-stepper">
-      <div class="stepper__step">
-        Do you run docker?
-        <div>
-          <input type="radio" name="docker" value="yes" id="docker-yes" />
-          <label for="docker-yes">Yes</label>
-          <br />
-          <input type="radio" name="docker" value="no" id="docker-no" />
-          <label for="docker-no">No</label>
+    <main>
+      <h1>Accessibility checker test page</h1>
+      <section>
+        <p>
+          This page is just a page to test the accessibility checker. We have
+          two separate pages we can test (<a href="/docker/">/docker/</a> &
+          <a href="/local/">/local/</a>) and we can check a "single-page" form
+          with different steps.
+        </p>
+        <ul class="solutions">
+          <li class="solutions__item">
+            <a href="/docker/"
+              ><img src="../img/docker.svg" alt="docker implementation"
+            /></a>
+          </li>
+          <li class="solutions__item">
+            <a href="/local/"
+              ><img src="../img/npm.svg" alt="npm implementation"
+            /></a>
+          </li>
+        </ul>
+      </section>
+      <section class="stepper" id="homepage-stepper">
+        <div class="stepper__step">
+          <div class="stepper__content">
+            <p>Don't know what to choose:</p>
+            <p>Do you run docker?</p>
+            <div>
+              <input type="radio" name="docker" value="yes" id="docker-yes" />
+              <label for="docker-yes">Yes</label>
+              <br />
+              <input type="radio" name="docker" value="no" id="docker-no" />
+              <label for="docker-no">No</label>
+            </div>
+          </div>
+          <div class="stepper__buttons">
+            <button class="stepper__button --next">Next step</button>
+          </div>
         </div>
-        <div class="stepper__buttons">
-          <button class="stepper__button --next">Next step</button>
-        </div>
-      </div>
-      <div class="stepper__step">
-        This is a useless step
-        <div class="stepper__buttons">
-          <button class="stepper__button --previous">Previous step</button>
-          <button class="stepper__button --next">Next step</button>
-        </div>
-      </div>
-      <div class="stepper__step">
-        Last
-        <div id="chosen">Nothing?</div>
-        <div class="stepper__buttons">
-          <button class="stepper__button --previous">Previous step</button>
-        </div>
-      </div>
-    </div>
+        <div class="stepper__step">
+          <div class="stepper__content">
+            This is just a step where we can test an image without an alt-tag
+            (but we are excluding this from the tests).
 
-    <script src="../js/index.js"></script>
+            <div class="suggestion --image">
+              <div class="suggestion__docker">
+                <img src="../img/docker.svg" />
+              </div>
+              <div class="suggestion__no-docker">
+                <img src="../img/npm.svg" />
+              </div>
+            </div>
+          </div>
+          <div class="stepper__buttons">
+            <button class="stepper__button --previous">Previous step</button>
+            <button class="stepper__button --next">Next step</button>
+          </div>
+        </div>
+        <div class="stepper__step">
+          <div class="stepper__content">
+            <div class="suggestion">
+              <div class="suggestion__nothing">
+                You didn't chose anything, I suggest using docker.
+              </div>
+              <div class="suggestion__docker">
+                More info about our
+                <a href="/docker/">docker</a> implementation.
+              </div>
+              <div class="suggestion__no-docker">
+                More info about our <a href="/local/">local</a> (just plain npm)
+                implementation.
+              </div>
+            </div>
+          </div>
+          <div class="stepper__buttons">
+            <button class="stepper__button --previous">Previous step</button>
+          </div>
+        </div>
+      </section>
+    </main>
     <script src="../js/stepper.js"></script>
     <script src="../js/choice.js"></script>
   </body>

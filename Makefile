@@ -27,7 +27,7 @@ do-start:
 
 do-watch:
 	@echo "\n=== Watch assets ===\n"
-	${cd} docker-compose run --rm appBuilder npm run dev
+	${cd} docker-compose run --service-ports --rm appBuilder npm run dev
 
 do-stop:
 	@echo "\n=== Stop ===\n"

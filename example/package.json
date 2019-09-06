@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "parcel watch src/html/index.html src/html/test/index.html",
+    "dev": "parcel watch src/html/index.html src/html/docker/index.html src/html/local/index.html --hmr-port 1001",
     "build": "parcel build index.html"
   },
   "dependencies": {
