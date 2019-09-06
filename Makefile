@@ -11,7 +11,7 @@ stop: do-stop
 # Snippets
 # ===========================
 
-cd = cd example && 
+compose-file = -f `pwd`/example/docker-compose.yml 
 
 # ===========================
 # Recipes
@@ -19,16 +19,16 @@ cd = cd example &&
 
 do-init:
 	@echo "\n=== Initialisation ===\n"
-	${cd} docker-compose run --rm appBuilder npm ci
+	docker-compose ${compose-file} run --rm appBuilder npm ci
 
 do-start:
 	@echo "\n=== Start ===\n"
-	${cd} docker-compose up -d app
+	docker-compose ${compose-file} up -d app
 
 do-watch:
 	@echo "\n=== Watch assets ===\n"
-	${cd} docker-compose run --service-ports --rm appBuilder npm run dev
+	docker-compose ${compose-file} run --service-ports --rm appBuilder npm run dev
 
 do-stop:
 	@echo "\n=== Stop ===\n"
-	${cd} docker-compose stop
+	docker-compose ${compose-file} stop
