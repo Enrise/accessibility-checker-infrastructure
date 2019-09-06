@@ -2,10 +2,11 @@
 # Main commands
 # ===========================
 
-init: do-init do-start
+init: do-init do-build do-start
 dev: do-start do-watch
 start: do-start
 stop: do-stop
+build: do-build
 
 # ===========================
 # Snippets
@@ -32,3 +33,7 @@ do-watch:
 do-stop:
 	@echo "\n=== Stop ===\n"
 	docker-compose ${compose-file} stop
+
+do-build:
+	@echo "\n=== Build assets ===\n"
+	docker-compose ${compose-file} run --rm appBuilder npm run build
