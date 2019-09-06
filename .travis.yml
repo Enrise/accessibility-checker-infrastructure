@@ -1,15 +1,16 @@
 language: minimal
 
 services:
-- docker
+  - docker
 
 install:
-- bash ./scripts/updateAll.sh
+  - docker-compose -f `pwd`/example/docker-compose.yml run --rm appBuilder npm ci
+  - docker-compose -f `pwd`/example/docker-compose.yml run -e PUBLIC_URL="/accessibility-checker-infrastructure/" --rm appBuilder npm run build
 
 deploy:
   provider: pages
   skip-cleanup: true
   github-token: $PA_TOKEN
-  local-dir: ./examples/vanillajs
+  local-dir: ./example/dist/
   on:
     branch: master

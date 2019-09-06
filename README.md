@@ -4,11 +4,11 @@ An example project setup with accessibility checking in place.
 
 ## How to view the examples locally
 
-You can run the following commands to start / stop / update all the example projects at once:
-- `npm run update` - Update/install the node packages
-- `npm start` - Start the example containers
-- `npm stop` - Stop the example containers
-- `npm run down` - Kill the example containers
+You can run the following commands to start / stop / update the example project.
+- `make init` - Update/install the node packages
+- `make start` - Start the example containers
+- `make stop` - Stop the example containers
+- `make dev` - Run the assets watcher
 
 ## Deployment
 
