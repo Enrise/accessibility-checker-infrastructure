@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js --require ../**/{puppeteerCucumberLocal,cucumber-puppeteer}/features/**/*.js"
+    "test": "cucumber-js --require ../**/{local,cucumber-puppeteer}/features/**/*.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "axe-puppeteer": "^1.0.0",
     "chai": "^4.2.0",
-    "cucumber-puppeteer": "^1.0.14",
+    "cucumber-puppeteer": "^1.0.15",
     "puppeteer": "^1.19.0"
   }
 }

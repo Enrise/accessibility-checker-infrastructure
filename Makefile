@@ -7,6 +7,7 @@ dev: do-start do-watch
 start: do-start
 stop: do-stop
 build: do-build
+test: do-test
 
 # ===========================
 # Snippets
@@ -37,3 +38,7 @@ do-stop:
 do-build:
 	@echo "\n=== Build assets ===\n"
 	docker-compose ${compose-file} run --rm appBuilder npm run build
+
+do-test:
+	@echo "\n=== Testing page ===\n"
+	npm --prefix tests/docker test

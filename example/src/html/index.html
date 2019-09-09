@@ -39,8 +39,8 @@
         <div class="stepper__step">
           <div class="stepper__content">
             <p>Don't know what to choose:</p>
-            <p>Do you run docker?</p>
-            <div>
+            <p id="run-docker">Do you run docker?</p>
+            <div role="radiogroup" aria-labelledby="run-docker">
               <input type="radio" name="docker" value="yes" id="docker-yes" />
               <label for="docker-yes">Yes</label>
               <br />
@@ -73,6 +73,9 @@
         </div>
         <div class="stepper__step">
           <div class="stepper__content">
+            <div style="color: #eeeeee">
+              This is hidden by color, just so we can test excluding some rules
+            </div>
             <div class="suggestion">
               <div class="suggestion__nothing">
                 You didn't chose anything, I suggest using docker.
