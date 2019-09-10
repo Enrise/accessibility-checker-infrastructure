@@ -40,5 +40,7 @@ do-build:
 	docker-compose ${compose-file} run --rm appBuilder npm run build
 
 do-test:
-	@echo "\n=== Testing page ===\n"
+	@echo "\n=== Testing page using docker ===\n"
 	npm --prefix tests/docker test
+	@echo "\n=== Testing page using a local install ===\n"
+	npm --prefix tests/local test

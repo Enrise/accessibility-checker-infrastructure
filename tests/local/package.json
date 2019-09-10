@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js --require ../**/{local,cucumber-puppeteer}/features/**/*.js"
+    "test": "cucumber-js --require ../**/{local,cucumber-puppeteer,cucumber-puppeteer-axe}/features/**/*.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +13,8 @@
     "chai": "^4.2.0",
     "cucumber-puppeteer": "^1.0.15",
     "puppeteer": "^1.19.0"
+  },
+  "dependencies": {
+    "cucumber-puppeteer-axe": "^0.1.2"
   }
 }

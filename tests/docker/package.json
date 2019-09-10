@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "docker run -v `pwd`/features:/home/node/app/features --rm -it --network=host enrise/puppeteer-cucumber:2.1"
+    "test": "docker run -v `pwd`/features:/home/node/app/features --rm -it --network=host enrise/puppeteer-cucumber:2.2"
   },
   "author": "",
   "license": "ISC"
