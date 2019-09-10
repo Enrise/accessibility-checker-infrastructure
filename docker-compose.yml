@@ -6,7 +6,7 @@ services:
     networks:
       - ACI-example
     volumes:
-      - ./:/app
+      - ./example:/app
     working_dir: /app
     ports:
       - 1001:1001
@@ -18,10 +18,17 @@ services:
     networks:
       - ACI-example
     volumes:
-      - ./dist:/usr/share/nginx/html:ro
+      - ./example/dist:/usr/share/nginx/html:ro
     working_dir: /usr/share/nginx/html
     ports:
       - 1000:80
+
+  test:
+    image: enrise/puppeteer-cucumber:2.2
+    networks:
+      - ACI-example
+    volumes:
+      - ./tests/docker/features:/home/node/app/features
 
 networks:
   ACI-example:

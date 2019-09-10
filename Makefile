@@ -21,26 +21,26 @@ compose-file = -f `pwd`/example/docker-compose.yml
 
 do-init:
 	@echo "\n=== Initialisation ===\n"
-	docker-compose ${compose-file} run --rm appBuilder npm ci
+	docker-compose run --rm appBuilder npm ci
 
 do-start:
 	@echo "\n=== Start ===\n"
-	docker-compose ${compose-file} up -d app
+	docker-compose up -d app
 
 do-watch:
 	@echo "\n=== Watch assets ===\n"
-	docker-compose ${compose-file} run --service-ports --rm appBuilder npm run dev
+	docker-compose run --service-ports --rm appBuilder npm run dev
 
 do-stop:
 	@echo "\n=== Stop ===\n"
-	docker-compose ${compose-file} stop
+	docker-compose stop
 
 do-build:
 	@echo "\n=== Build assets ===\n"
-	docker-compose ${compose-file} run --rm appBuilder npm run build
+	docker-compose run --rm appBuilder npm run build
 
 do-test:
 	@echo "\n=== Testing page using docker ===\n"
-	npm --prefix tests/docker test
+	docker-compose run --rm test
 	@echo "\n=== Testing page using a local install ===\n"
 	npm --prefix tests/local test
