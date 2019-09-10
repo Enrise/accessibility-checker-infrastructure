@@ -10,10 +10,10 @@ Feature: Pages
         Then the page should be accessible
 
         Scenarios:
-            | PAGE |
-            | / |
+            | PAGE     |
+            | /        |
             | /docker/ |
-            | /local/ |
+            | /local/  |
 
 
     Scenario: Walk through the stepper on the homepage
