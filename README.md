@@ -9,6 +9,7 @@ You can run the following commands to start / stop / update the example project.
 - `make start` - Start the example containers
 - `make stop` - Stop the example containers
 - `make dev` - Run the assets watcher
+- `make build` - Build the assets
 - `make test` - Run the accessibility tests (with docker and locally)
 
 ## Deployment
