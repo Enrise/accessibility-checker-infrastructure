@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Enrise/accessibility-checker-infrastructure.svg?branch=master)](https://travis-ci.com/Enrise/accessibility-checker-infrastructure)
+
 # accessibility-checker-infrastructure
 
 An example project setup with accessibility checking in place.
