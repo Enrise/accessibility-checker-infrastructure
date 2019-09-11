@@ -10,12 +10,6 @@ build: do-build
 test: do-test
 
 # ===========================
-# Snippets
-# ===========================
-
-compose-file = -f `pwd`/example/docker-compose.yml 
-
-# ===========================
 # Recipes
 # ===========================
 
@@ -43,4 +37,4 @@ do-test:
 	@echo "\n=== Testing page using docker ===\n"
 	docker-compose run --rm test
 	@echo "\n=== Testing page using a local install ===\n"
-	npm --prefix tests/local test
+	npm test

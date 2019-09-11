@@ -6,19 +6,20 @@ services:
     networks:
       - ACI-example
     volumes:
-      - ./example:/app
+      - ./:/app
     working_dir: /app
     ports:
       - 1001:1001
     environment:
       - PUBLIC_URL=/
+      - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
   app:
     image: nginx:stable-alpine
     networks:
       - ACI-example
     volumes:
-      - ./example/dist:/usr/share/nginx/html:ro
+      - ./dist:/usr/share/nginx/html:ro
     working_dir: /usr/share/nginx/html
     ports:
       - 1000:80
@@ -28,7 +29,9 @@ services:
     networks:
       - ACI-example
     volumes:
-      - ./tests/docker/features:/home/node/app/features
+      - ./test/features:/home/node/app/features
+    environment:
+      - ROOT_URL=http://app
 
 networks:
   ACI-example:
