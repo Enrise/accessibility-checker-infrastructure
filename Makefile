@@ -20,6 +20,7 @@ do-init:
 do-start:
 	@echo "\n=== Start ===\n"
 	docker-compose up -d app
+	@echo "\n-- Your app is running at http://localhost:1000\n"
 
 do-watch:
 	@echo "\n=== Watch assets ===\n"
