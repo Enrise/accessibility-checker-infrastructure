@@ -13,7 +13,7 @@ jobs:
       install:
         - docker-compose run --rm appBuilder npm ci
         - docker-compose run -e PUBLIC_URL="/accessibility-checker-infrastructure/" --rm appBuilder npm run build
-        - docker-compose up -e PUBLIC_URL="/accessibility-checker-infrastructure/" -d app
+        - docker-compose up -d app
       script:
         - docker-compose run --rm test
 
