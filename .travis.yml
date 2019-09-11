@@ -12,7 +12,7 @@ jobs:
     - stage: test
       install:
         - docker-compose run --rm appBuilder npm ci
-        - docker-compose run -e PUBLIC_URL="/accessibility-checker-infrastructure/" --rm appBuilder npm run build
+        - docker-compose run --rm appBuilder npm run build
         - docker-compose up -d app
       script:
         - docker-compose run --rm test
