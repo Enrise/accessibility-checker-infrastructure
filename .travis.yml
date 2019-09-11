@@ -5,11 +5,13 @@ services:
 
 stages:
   - test
-  - deploy
+  - name: deploy
+    if: branch = master
 
 jobs:
   include:
     - stage: test
+      name: Testing accessibility
       install:
         - docker-compose run --rm appBuilder npm ci
         - docker-compose run --rm appBuilder npm run build
@@ -18,6 +20,7 @@ jobs:
         - docker-compose run --rm test
 
     - stage: deploy
+      name: Deploy to github pages
       install:
         - docker-compose run --rm appBuilder npm ci
         - docker-compose run -e PUBLIC_URL="/accessibility-checker-infrastructure/" --rm appBuilder npm run build
@@ -26,5 +29,3 @@ jobs:
         skip-cleanup: true
         github-token: $PA_TOKEN
         local-dir: ./example/dist/
-        on:
-          branch: master
