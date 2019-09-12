@@ -2,6 +2,7 @@
 # Main commands
 # ===========================
 
+info: do-info
 init: do-init do-build do-start
 dev: do-start do-watch
 start: do-start
@@ -12,6 +13,16 @@ test: do-test
 # ===========================
 # Recipes
 # ===========================
+
+do-info:
+	@echo "\n=== Accessibility Checker Infrastructure ===\n"
+	@echo "  Commands:"
+	@echo "    make init          build the example and start init"
+	@echo "    make build         build the assets"
+	@echo "    make start         start the example app"
+	@echo "    make stop          stop the app"
+	@echo "    make dev           watch for file changes"
+	@echo "    make test          run the accessibility tests"
 
 do-init:
 	@echo "\n=== Initialisation ===\n"
