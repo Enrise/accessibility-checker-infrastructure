@@ -2,8 +2,7 @@ Feature: Pages
 
     As a consumer
     I want the whole website to be accessible
-    Therfore I test all the pages and the stepper
-
+    Therefore I test all the pages and the stepper
 
     Scenario Outline: Check all pages for accessibility issues
         Given I use the accessibility standards "wcag2a,wcag2aa"
