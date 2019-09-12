@@ -15,7 +15,10 @@ test: do-test
 
 do-init:
 	@echo "\n=== Initialisation ===\n"
-	docker-compose run --rm appBuilder npm ci
+	# Normally we would run this in the docker container
+	# But since I want to show how to run the test locally we need chromium to be installed on the system
+	# If you are only using docker this is better: docker-compose run --rm appBuilder npm ci
+	npm ci	
 
 do-start:
 	@echo "\n=== Start ===\n"
