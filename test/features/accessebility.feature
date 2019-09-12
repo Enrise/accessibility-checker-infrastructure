@@ -25,5 +25,5 @@ Feature: Pages
         Given I open the url "/"
         And I disable the accessibility rule "color-contrast"
         When I click the button ".--active .--next" and wait for the element '[step-id="1"]'
-        When I click the button ".--active .--next" and wait for the element '[step-id="2"]'
+        And I click the button ".--active .--next" and wait for the element '[step-id="2"]'
         Then the section "#homepage-stepper" should be accessible
