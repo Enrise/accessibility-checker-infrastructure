@@ -1,0 +1,24 @@
+.solutions
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    padding: 0
+
+    @include tablet_and_up
+        flex-wrap: nowrap
+
+    &__item
+        flex: 1 1 100%
+        padding: 10px
+        border-radius: 5px
+
+        &:hover,
+        &:focus
+            background: #eeeeee
+
+        a
+            display: block
+            height: 100%
+
+        img 
+            width: 100%

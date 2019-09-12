@@ -1,15 +1,31 @@
 language: minimal
 
 services:
-- docker
+  - docker
 
-install:
-- bash ./scripts/updateAll.sh
+stages:
+  - test
+  - name: deploy
+    if: branch = master
 
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $PA_TOKEN
-  local-dir: ./examples/vanillajs
-  on:
-    branch: master
+jobs:
+  include:
+    - stage: test
+      name: Testing accessibility
+      install:
+        - docker-compose run --rm appBuilder npm ci
+        - docker-compose run --rm appBuilder npm run build
+        - docker-compose up -d app
+      script:
+        - docker-compose run --rm test
+
+    - stage: deploy
+      name: Deploy to github pages
+      install:
+        - docker-compose run --rm appBuilder npm ci
+        - docker-compose run -e PUBLIC_URL="/accessibility-checker-infrastructure/" --rm appBuilder npm run build
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        github-token: $PA_TOKEN
+        local-dir: ./example/dist/
