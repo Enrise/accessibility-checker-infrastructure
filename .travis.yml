@@ -28,4 +28,4 @@ jobs:
         provider: pages
         skip-cleanup: true
         github-token: $PA_TOKEN
-        local-dir: ./example/dist/
+        local-dir: ./dist/
