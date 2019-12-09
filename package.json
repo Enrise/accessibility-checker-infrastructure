@@ -31,7 +31,7 @@
     "babel-polyfill": "^6.26.0",
     "chai": "^4.2.0",
     "cucumber-puppeteer-axe": "^1.0.0",
-    "parcel-bundler": "^1.12.3",
+    "parcel-bundler": "^1.12.4",
     "sass": "^1.22.12"
   }
 }
